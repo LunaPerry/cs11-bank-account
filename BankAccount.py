@@ -28,11 +28,21 @@ class BankAccount:
         else:
             self.balance -= amount
             print(f"Amount Withdrawn: ${amount:.2f}")
+
+    def get_balance(self):
+        '''
+        The get_balance method will print a user-friendly message with the account balance and then 
+        also return the current balance of the account.
+        '''
+        print(f"Your current balance is ${self.balance:.2f}")
+        return self.balance
         
 
 Luna = BankAccount("Luna Perry", 12345678)
 
 Luna.deposit(5)
 print(Luna.__dict__)
-Luna.withdraw(3)
+Luna.withdraw(3.11)
 print(Luna.__dict__)
+
+Luna.get_balance()
