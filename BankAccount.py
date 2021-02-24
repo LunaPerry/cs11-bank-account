@@ -1,7 +1,11 @@
+import random
+
 class BankAccount:
     routing_number = 123456789
 
-    def __init__(self, full_name, account_number, balance = 0):
+    def __init__(self, full_name, account_number=None, balance = 0):
+        if account_number is None:
+                account_number = random.randint(10000000,99999999)
         self.full_name = full_name
         self.account_number = account_number
         self.balance = balance
@@ -57,7 +61,7 @@ class BankAccount:
         print(f"Routing No.: {BankAccount.routing_number}")
         print(f"Balance: ${self.balance:.2f}")
 
-Luna = BankAccount("Luna Perry", 12345678)
+Luna = BankAccount("Luna Perry")
 
 Luna.deposit(10000)
 
