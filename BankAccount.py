@@ -36,13 +36,23 @@ class BankAccount:
         '''
         print(f"Your current balance is ${self.balance:.2f}")
         return self.balance
-        
+
+    def add_interest(self):
+        '''
+        The add_interest method adds interest to the users balance. The annual interest rate is 1% (i.e. 0.083% per month). 
+        Thus, the monthly interest is calculated by the following equation: interest = balance *  0.00083
+        '''
+        self.balance *= 1.00083
+
 
 Luna = BankAccount("Luna Perry", 12345678)
 
-Luna.deposit(5)
+Luna.deposit(5000)
 print(Luna.__dict__)
-Luna.withdraw(3.11)
+Luna.withdraw(1000)
 print(Luna.__dict__)
 
+Luna.get_balance()
+
+Luna.add_interest()
 Luna.get_balance()
