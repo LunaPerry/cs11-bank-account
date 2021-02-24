@@ -6,3 +6,15 @@ class BankAccount:
         self.account_number = account_number
         self.balance = balance
 
+    def deposit(self, amount):
+        '''
+        The deposit method will take one parameter amount and will add amount to the balance. 
+        Also, it will print the message: “Amount Deposited: $X.XX”
+        '''
+        self.balance += amount
+        print(f'Amount Deposited: ${amount}')
+
+Luna = BankAccount("Luna Perry", 12345678)
+
+Luna.deposit(5)
+print(Luna.__dict__)
