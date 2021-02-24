@@ -62,8 +62,18 @@ class BankAccount:
         print(f"Balance: ${self.balance:.2f}")
 
 Luna = BankAccount("Luna Perry")
+Marick = BankAccount("Marick")
+Flora = BankAccount("Flora")
 
 Luna.deposit(10000)
+Marick.deposit(1000)
+Flora.deposit(35000)
 
+Marick.withdraw(2000)
+Marick.get_balance()
+
+Luna.add_interest()
+
+Flora.print_receipt()
 Luna.print_receipt()
 
