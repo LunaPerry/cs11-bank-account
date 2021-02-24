@@ -14,7 +14,25 @@ class BankAccount:
         self.balance += amount
         print(f'Amount Deposited: ${amount:.2f}')
 
+    def withdraw(self, amount):
+        '''
+        The withdraw method will take one parameter amount and will subtract amount from the balance. 
+        Also, it will print a message, like “Amount Withdrawn: $X.XX”. 
+        If the user tries to withdraw an amount that is greater than the current balance, 
+        print ”Insufficient funds.” and charge them with an overdraft fee of $10
+        '''
+        if amount > self.balance:
+            print("Insufficient funds.")
+            self.balance -= 10
+            print("$10.00 Overdraft fee applied")
+        else:
+            self.balance -= amount
+            print(f"Amount Withdrawn: ${amount:.2f}")
+        
+
 Luna = BankAccount("Luna Perry", 12345678)
 
 Luna.deposit(5)
+print(Luna.__dict__)
+Luna.withdraw(3)
 print(Luna.__dict__)
