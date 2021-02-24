@@ -12,7 +12,7 @@ class BankAccount:
         Also, it will print the message: “Amount Deposited: $X.XX”
         '''
         self.balance += amount
-        print(f'Amount Deposited: ${amount}')
+        print(f'Amount Deposited: ${amount:.2f}')
 
 Luna = BankAccount("Luna Perry", 12345678)
 
