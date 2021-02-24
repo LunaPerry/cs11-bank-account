@@ -44,15 +44,22 @@ class BankAccount:
         '''
         self.balance *= 1.00083
 
+    def print_receipt(self):
+        '''
+        The print_receipt method prints a receipt with the account name, account number, and balance like this:
+            Joi Anderson
+            Account No.: ****5678
+            Routing No.: 98765432
+            Balance: $100.00
+        '''
+        print(self.full_name)
+        print(f"Account No.: ****{str(self.account_number)[-4:]}")
+        print(f"Routing No.: {BankAccount.routing_number}")
+        print(f"Balance: ${self.balance:.2f}")
 
 Luna = BankAccount("Luna Perry", 12345678)
 
-Luna.deposit(5000)
-print(Luna.__dict__)
-Luna.withdraw(1000)
-print(Luna.__dict__)
+Luna.deposit(10000)
 
-Luna.get_balance()
+Luna.print_receipt()
 
-Luna.add_interest()
-Luna.get_balance()
